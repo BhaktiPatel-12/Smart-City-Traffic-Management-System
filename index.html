@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Smart City Traffic Management System</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <div class="app">
+        <aside class="sidebar" id="sidebar">
+            <div class="brand">
+                <div class="brand-icon"><i class="fa-solid fa-traffic-light"></i></div>
+                <div>
+                    <h1>SCTMS</h1>
+                    <p>Metro City Dashboard</p>
+                </div>
+            </div>
+
+            <nav class="nav">
+                <button class="nav-link active" data-target="home"><i
+                        class="fa-solid fa-house"></i><span>Home</span></button>
+                <button class="nav-link" data-target="dashboard"><i class="fa-solid fa-gauge-high"></i><span>Dashboard
+                        Metrics</span></button>
+                <button class="nav-link" data-target="overview"><i class="fa-solid fa-circle-info"></i><span>System
+                        Overview</span></button>
+                <button class="nav-link" data-target="data-sources"><i class="fa-solid fa-video"></i><span>Data
+                        Sources</span></button>
+                <button class="nav-link" data-target="problem"><i
+                        class="fa-solid fa-triangle-exclamation"></i><span>Problem Statement</span></button>
+                <button class="nav-link" data-target="objectives"><i
+                        class="fa-solid fa-bullseye"></i><span>Objectives</span></button>
+                <button class="nav-link" data-target="architecture"><i
+                        class="fa-solid fa-diagram-project"></i><span>Architecture</span></button>
+                <button class="nav-link" data-target="ai-engine"><i class="fa-solid fa-brain"></i><span>AI
+                        Engine</span></button>
+                <button class="nav-link" data-target="signal-control"><i class="fa-solid fa-lightbulb"></i><span>Signal
+                        Control</span></button>
+                <button class="nav-link" data-target="route-planner"><i class="fa-solid fa-route"></i><span>Route
+                        Planner</span></button>
+                <button class="nav-link" data-target="process"><i class="fa-solid fa-sitemap"></i><span>Process
+                        Model</span></button>
+                <button class="nav-link" data-target="tasksets"><i class="fa-solid fa-list-check"></i><span>Task
+                        Sets</span></button>
+                <button class="nav-link" data-target="modules"><i class="fa-solid fa-cubes"></i><span>Core
+                        Modules</span></button>
+                <button class="nav-link" data-target="reports"><i
+                        class="fa-solid fa-chart-column"></i><span>Reports</span></button>
+                <button class="nav-link" data-target="emergency"><i
+                        class="fa-solid fa-truck-medical"></i><span>Emergency Center</span></button>
+                <button class="nav-link" data-target="security"><i
+                        class="fa-solid fa-shield-halved"></i><span>Security</span></button>
+                <button class="nav-link" data-target="maintenance"><i
+                        class="fa-solid fa-screwdriver-wrench"></i><span>Maintenance</span></button>
+                <button class="nav-link" data-target="future"><i class="fa-solid fa-lightbulb"></i><span>Future
+                        Scope</span></button>
+                <button class="nav-link" data-target="conclusion"><i
+                        class="fa-solid fa-flag-checkered"></i><span>Conclusion</span></button>
+            </nav>
+        </aside>
+
+        <main class="main">
+            <header class="topbar">
+                <button class="menu-btn" id="menuBtn"><i class="fa-solid fa-bars"></i></button>
+                <div>
+                    <h2>Smart City Traffic Management System</h2>
+                    <p>AI, IoT, real-time analytics, emergency support, and smart signal control</p>
+                </div>
+                <div class="status-badge"><span class="dot"></span> 24×7 Monitoring</div>
+            </header>
+
+            <section class="hero section active" id="home">
+                <div class="hero-content">
+                    <h3>Metro City Traffic Control Center</h3>
+                    <p>
+                        A smart traffic management platform for real-time congestion detection, AI-based accident
+                        detection,
+                        dynamic signal control, route optimization, emergency prioritization, weather-aware traffic
+                        decisions,
+                        and city-wide traffic intelligence.
+                    </p>
+                    <div class="hero-actions">
+                        <button class="btn primary" onclick="scrollToSection('dashboard')">View Dashboard</button>
+                        <button class="btn secondary" onclick="scrollToSection('process')">Explore Process
+                            Model</button>
+                    </div>
+                </div>
+
+                <div class="hero-stats">
+                    <div class="stat-card">
+                        <h4>Congestion Hotspots</h4>
+                        <p>12 Active Zones</p>
+                    </div>
+                    <div class="stat-card">
+                        <h4>Emergency Priority</h4>
+                        <p>Enabled</p>
+                    </div>
+                    <div class="stat-card">
+                        <h4>AI Detection</h4>
+                        <p>Live Processing</p>
+                    </div>
+                    <div class="stat-card">
+                        <h4>System Uptime</h4>
+                        <p>99.98%</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section page" id="dashboard">
+                <div class="section-header">
+                    <h3>Dashboard Metrics</h3>
+                </div>
+                <div class="card-grid">
+                    <div class="card">
+                        <h4>Traffic Flow Status</h4>
+                        <p>Monitors vehicle movement across major roads and identifies high-density intersections.</p>
+                    </div>
+                    <div class="card">
+                        <h4>Average Signal Delay</h4>
+                        <p>Measures waiting time at signals and updates timing dynamically for smoother movement.</p>
+                    </div>
+                    <div class="card">
+                        <h4>Incident Response Rate</h4>
+                        <p>Tracks how quickly accidents, jams, and emergency cases are detected and handled.</p>
+                    </div>
+                    <div class="card">
+                        <h4>Air Quality Impact</h4>
+                        <p>Estimates pollution levels caused by traffic congestion and helps support cleaner planning.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section page" id="overview">
+                <div class="section-header">
+                    <h3>System Overview</h3>
+                </div>
+                <div class="card-grid">
+                    <div class="card">
+                        <h4>Real-Time Data Sources</h4>
+                        <p>Traffic cameras, IoT sensors, GPS devices, drones, and weather APIs continuously feed live
+                            data to the control center.</p>
+                    </div>
+                    <div class="card">
+                        <h4>AI Intelligence</h4>
+                        <p>Machine learning models detect congestion, accidents, and abnormal movement patterns to
+                            support faster decisions.</p>
+                    </div>
+                    <div class="card">
+                        <h4>Smart Citizen Services</h4>
+                        <p>Commuters receive alternate routes, traffic alerts, and emergency notifications through a
+                            mobile application.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section page" id="data-sources">
+                <div class="section-header">
+                    <h3>Data Sources</h3>
+                </div>
+                <div class="feature-list">
+                    <div class="feature"><i class="fa-solid fa-video"></i><span><strong>Traffic Cameras:</strong>
+                            Capture live road visuals for congestion and accident analysis.</span></div>
+                    <div class="feature"><i class="fa-solid fa-satellite-dish"></i><span><strong>IoT Sensors:</strong>
+                            Detect vehicle count, road occupancy, speed, and lane blockage.</span></div>
+                    <div class="feature"><i class="fa-solid fa-location-dot"></i><span><strong>GPS Devices:</strong>
+                            Track public transport, ambulances, fire brigades, and police vehicles.</span></div>
+                    <div class="feature"><i class="fa-solid fa-helicopter"></i><span><strong>Drones:</strong> Monitor
+                            major intersections and accident-prone zones from above.</span></div>
+                    <div class="feature"><i class="fa-solid fa-cloud"></i><span><strong>Weather Services:</strong>
+                            Provide rain, fog, and storm data for adaptive traffic decisions.</span></div>
+                </div>
+            </section>
+
+            <section class="section page" id="problem">
+                <div class="section-header">
+                    <h3>Problem Statement</h3>
+                </div>
+                <div class="card">
+                    <p>
+                        Metro City is facing severe traffic congestion, frequent accidents, delayed emergency services,
+                        and rising air pollution
+                        due to poor traffic management. The municipality needs a scalable, secure, and intelligent SCTMS
+                        to optimize signal timings,
+                        reduce delays, improve safety, and support future city planning.
+                    </p>
+                </div>
+            </section>
+
+            <section class="section page" id="objectives">
+                <div class="section-header">
+                    <h3>Project Objectives</h3>
+                </div>
+                <div class="feature-list">
+                    <div class="feature"><i class="fa-solid fa-bolt"></i><span>Detect congestion and accidents
+                            automatically using AI.</span></div>
+                    <div class="feature"><i class="fa-solid fa-arrows-spin"></i><span>Adjust traffic signal timings
+                            dynamically based on density.</span></div>
+                    <div class="feature"><i class="fa-solid fa-route"></i><span>Provide alternate routes for
+                            commuters.</span></div>
+                    <div class="feature"><i class="fa-solid fa-ambulance"></i><span>Prioritize emergency vehicles at
+                            signals.</span></div>
+                    <div class="feature"><i class="fa-solid fa-cloud-rain"></i><span>Adapt traffic control based on
+                            weather conditions.</span></div>
+                    <div class="feature"><i class="fa-solid fa-database"></i><span>Store historical traffic data for
+                            prediction and planning.</span></div>
+                </div>
+            </section>
+
+            <section class="section page" id="architecture">
+                <div class="section-header">
+                    <h3>System Architecture</h3>
+                </div>
+                <div class="architecture">
+                    <div class="arch-box">Data Sources<br><small>Cameras, IoT, GPS, Drones</small></div>
+                    <div class="arrow"><i class="fa-solid fa-arrow-right"></i></div>
+                    <div class="arch-box">AI Engine<br><small>Detection & Prediction</small></div>
+                    <div class="arrow"><i class="fa-solid fa-arrow-right"></i></div>
+                    <div class="arch-box">Control Layer<br><small>Signals, Routes, Alerts</small></div>
+                    <div class="arrow"><i class="fa-solid fa-arrow-right"></i></div>
+                    <div class="arch-box">Users & Admin<br><small>Citizens, Hospitals, Officers</small></div>
+                </div>
+            </section>
+
+            <section class="section page" id="ai-engine">
+                <div class="section-header">
+                    <h3>AI Engine</h3>
+                </div>
+                <div class="card-grid">
+                    <div class="card">
+                        <h4>Congestion Detection</h4>
+                        <p>Uses live vehicle density, speed patterns, and lane occupancy to detect traffic buildup in
+                            real time.</p>
+                    </div>
+                    <div class="card">
+                        <h4>Accident Recognition</h4>
+                        <p>Analyzes unusual stopping, motion irregularities, and camera footage to identify collisions
+                            quickly.</p>
+                    </div>
+                    <div class="card">
+                        <h4>Traffic Prediction</h4>
+                        <p>Predicts future congestion using historical patterns, weather data, and road usage trends.
+                        </p>
+                    </div>
+                    <div class="card">
+                        <h4>Decision Support</h4>
+                        <p>Suggests the best traffic response, such as rerouting, signal adjustment, or emergency
+                            alerts.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section page" id="signal-control">
+                <div class="section-header">
+                    <h3>Signal Control</h3>
+                </div>
+                <div class="card-grid">
+                    <div class="card">
+                        <h4>Dynamic Timing</h4>
+                        <p>Signal green time increases for heavily loaded roads and decreases for less busy directions.
+                        </p>
+                    </div>
+                    <div class="card">
+                        <h4>Adaptive Queue Management</h4>
+                        <p>Reduces long waiting lines by balancing lanes based on real-time vehicle pressure.</p>
+                    </div>
+                    <div class="card">
+                        <h4>Emergency Override</h4>
+                        <p>Automatically switches signals to create a green corridor for ambulances and fire vehicles.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section page" id="route-planner">
+                <div class="section-header">
+                    <h3>Route Planner</h3>
+                </div>
+
+                <div class="card-grid">
+                    <div class="card">
+                        <h4>City Selection</h4>
+                        <p>Select a city to view its live route map and traffic-friendly navigation paths.</p>
+
+                        <select id="citySelect" class="city-select">
+                            <option value="Ahmedabad">Ahmedabad</option>
+                            <option value="Mumbai">Mumbai</option>
+                            <option value="Delhi">Delhi</option>
+                            <option value="Bengaluru">Bengaluru</option>
+                            <option value="Pune">Pune</option>
+                        </select>
+
+                        <button class="btn primary" onclick="updateCityMap()">Load Map</button>
+                    </div>
+
+                    <div class="card">
+                        <h4>Recommended Route</h4>
+                        <p>Shows the fastest route based on congestion, weather, and emergency traffic conditions.</p>
+                    </div>
+                </div>
+
+                <div class="card" style="margin-top:18px;">
+                    <h4>Google Map View</h4>
+                    <div id="map" style="width:100%; height:420px; border-radius:14px; overflow:hidden;"></div>
+                </div>
+            </section>
+
+            <section class="section page" id="process">
+                <div class="section-header">
+                    <h3>Generic Process Model</h3>
+                </div>
+                <div class="process-grid">
+                    <div class="process-card">
+                        <h4>1. Communication</h4>
+                        <p>Gather stakeholder needs from citizens, traffic police, hospitals, and city administrators.
+                        </p>
+                    </div>
+                    <div class="process-card">
+                        <h4>2. Planning</h4>
+                        <p>Define schedule, budget, team roles, risk mitigation, and delivery milestones for 12 months.
+                        </p>
+                    </div>
+                    <div class="process-card">
+                        <h4>3. Modeling</h4>
+                        <p>Create UI wireframes, database design, AI workflows, and system architecture diagrams.</p>
+                    </div>
+                    <div class="process-card">
+                        <h4>4. Construction</h4>
+                        <p>Implement frontend, backend logic, AI integration, database, APIs, and device connectivity.
+                        </p>
+                    </div>
+                    <div class="process-card">
+                        <h4>5. Deployment</h4>
+                        <p>Test, launch, monitor, train users, and maintain the system in live city operations.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section page" id="tasksets">
+                <div class="section-header">
+                    <h3>Task Sets</h3>
+                </div>
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Framework Activity</th>
+                                <th>Task Set</th>
+                                <th>Key Output</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Communication</td>
+                                <td>Requirements gathering, stakeholder meetings, use cases</td>
+                                <td>Approved SRS</td>
+                            </tr>
+                            <tr>
+                                <td>Planning</td>
+                                <td>Estimation, scheduling, risk analysis, resource allocation</td>
+                                <td>Project plan</td>
+                            </tr>
+                            <tr>
+                                <td>Modeling</td>
+                                <td>UI design, DB schema, AI workflow, API design</td>
+                                <td>Design documents</td>
+                            </tr>
+                            <tr>
+                                <td>Construction</td>
+                                <td>Coding, testing, integration, bug fixing</td>
+                                <td>Working system</td>
+                            </tr>
+                            <tr>
+                                <td>Deployment</td>
+                                <td>Release, monitoring, training, support</td>
+                                <td>Live SCTMS</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section class="section page" id="modules">
+                <div class="section-header">
+                    <h3>Core Modules</h3>
+                </div>
+                <div class="card-grid">
+                    <div class="card">
+                        <h4>Traffic Monitoring</h4>
+                        <p>Consumes live camera and sensor feeds and displays density status on the dashboard.</p>
+                    </div>
+                    <div class="card">
+                        <h4>AI Detection</h4>
+                        <p>Identifies congestion, road incidents, and anomalies using trained algorithms.</p>
+                    </div>
+                    <div class="card">
+                        <h4>Signal Control</h4>
+                        <p>Adjusts red, yellow, and green timings based on traffic demand and emergency status.</p>
+                    </div>
+                    <div class="card">
+                        <h4>Route Recommendation</h4>
+                        <p>Suggests alternate routes to reduce travel time and avoid blocked roads.</p>
+                    </div>
+                    <div class="card">
+                        <h4>Admin Reports</h4>
+                        <p>Creates charts and downloadable reports for decision-making.</p>
+                    </div>
+                    <div class="card">
+                        <h4>Alerts & Notifications</h4>
+                        <p>Sends emergency warnings to citizens, hospitals, police, and fire units.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section page" id="reports">
+                <div class="section-header">
+                    <h3>Reports and Analytics</h3>
+                </div>
+                <div class="card-grid">
+                    <div class="card">
+                        <h4>Daily Traffic Summary</h4>
+                        <p>Shows peak congestion periods, road usage patterns, and average delay values.</p>
+                    </div>
+                    <div class="card">
+                        <h4>Accident Hotspot Report</h4>
+                        <p>Lists the zones with frequent incidents for planning road safety improvements.</p>
+                    </div>
+                    <div class="card">
+                        <h4>Emergency Response Report</h4>
+                        <p>Measures how quickly ambulances and rescue vehicles reach affected locations.</p>
+                    </div>
+                    <div class="card">
+                        <h4>Weather Impact Report</h4>
+                        <p>Analyzes how rain, fog, and storms change traffic conditions and travel times.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section page" id="analytics">
+                <div class="section-header">
+                    <h3>Traffic Analytics</h3>
+                </div>
+                <div class="charts-grid">
+                    <div class="chart-card">
+                        <h4>Congestion by Time</h4>
+                        <canvas id="congestionChart"></canvas>
+                    </div>
+                    <div class="chart-card">
+                        <h4>Accidents by Zone</h4>
+                        <canvas id="accidentChart"></canvas>
+                    </div>
+                    <div class="chart-card">
+                        <h4>Signal Optimization Impact</h4>
+                        <canvas id="signalChart"></canvas>
+                    </div>
+                    <div class="chart-card">
+                        <h4>Weather Impact on Traffic</h4>
+                        <canvas id="weatherChart"></canvas>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section page" id="emergency">
+                <div class="section-header">
+                    <h3>Emergency Center</h3>
+                </div>
+                <div class="card-grid">
+                    <div class="card">
+                        <h4>Major Accident Alert</h4>
+                        <p>Automatically notifies nearby hospitals, police control rooms, and emergency responders.</p>
+                    </div>
+                    <div class="card">
+                        <h4>Ambulance Priority</h4>
+                        <p>Changes traffic light states to create a green corridor for emergency vehicles.</p>
+                    </div>
+                    <div class="card">
+                        <h4>Citizen Notification</h4>
+                        <p>Pushes warning messages to mobile users near the affected area.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section page" id="security">
+                <div class="section-header">
+                    <h3>Security and Privacy</h3>
+                </div>
+                <div class="card">
+                    <ul class="bullet-list">
+                        <li>Encrypt sensitive data in transit and at rest.</li>
+                        <li>Use role-based access control for administrators and operators.</li>
+                        <li>Protect citizen privacy by minimizing personal data storage.</li>
+                        <li>Maintain audit logs for access, alerts, and system changes.</li>
+                        <li>Deploy redundancy, backups, and failover for high availability.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="section page" id="maintenance">
+                <div class="section-header">
+                    <h3>System Maintenance</h3>
+                </div>
+                <div class="card-grid">
+                    <div class="card">
+                        <h4>Database Backup</h4>
+                        <p>Regular backups preserve historical traffic records and prevent data loss.</p>
+                    </div>
+                    <div class="card">
+                        <h4>Device Health Check</h4>
+                        <p>Ensures cameras, sensors, and IoT devices are working correctly across the city.</p>
+                    </div>
+                    <div class="card">
+                        <h4>AI Model Update</h4>
+                        <p>Retrains and improves prediction models using new traffic and accident data.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section page" id="future">
+                <div class="section-header">
+                    <h3>Future Scope</h3>
+                </div>
+                <div class="card">
+                    <p>
+                        The system can later be extended with smart parking guidance, voice-based travel assistance,
+                        vehicle-to-infrastructure
+                        communication, pollution-based lane control, and predictive traffic simulation using historical
+                        data and AI.
+                    </p>
+                </div>
+            </section>
+
+            <section class="section page" id="conclusion">
+                <div class="section-header">
+                    <h3>Conclusion</h3>
+                </div>
+                <div class="card">
+                    <p>
+                        The Smart City Traffic Management System provides a complete digital solution for congestion
+                        reduction, accident response,
+                        emergency prioritization, and data-driven planning. With AI, IoT, weather integration, and
+                        secure 24×7 monitoring, Metro City
+                        can build a safer and more efficient transport network.
+                    </p>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
